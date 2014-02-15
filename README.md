@@ -49,6 +49,21 @@ If you want to remove the lib and all the temporary files:
 make distclean
 ```
 
+How to use
+----------
+
+Available colors :
+- Black
+- Red
+- Green
+- Yellow
+- Blue
+- Magenta
+- Cyan
+- White
+
+See the [Wikipedia article about ANSI espace colors code](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) for more information.
+
 Tools
 -----
 
