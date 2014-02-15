@@ -13,13 +13,13 @@ libcolor supplies all color characters and a printf-like function to output colo
 
 Have a look at the following example : 
 
-``` c
+``` C
 #include <stdio.h>
 
 #include "color.h" // from libcolor
 
 int main(void) {
-  // The last color characters (\e[m or COLOR_NORMAL) is used to reset the colors at the end of the printf.
+  // The last color characters (\e[m or COLOR_NORMAL from libcolor) is used to reset the colors at the end of the printf.
   // If you don't reset the colors, the colors will be apply to the following printf ("normal text" printf in this example).
   printf("\e[31m\e[47m\e[1mThis is bold red text on white -- no libcolor\e[m\n");
   printf("normal text\n");
