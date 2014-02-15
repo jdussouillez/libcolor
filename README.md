@@ -10,7 +10,30 @@ Output colored text to the console is quite easy. Before the text, you have to p
 
 However, the color characters are not easy to handle, and makes your printf look horrible.
 libcolor supplies all color characters and a printf-like function to output colored text without going crazy.
-// Example
+
+Have a look at the following example : 
+
+``` c
+#include <stdio.h>
+
+#include "color.h" // from libcolor
+
+int main(void) {
+  // The last color characters (\e[m or COLOR_NORMAL) is used to reset the colors at the end of the printf.
+  // If you don't reset the colors, the colors will be apply to the following printf ("normal text" printf in this example).
+  printf("\e[31m\e[47m\e[1mThis is bold red text on white -- no libcolor\e[m\n");
+  printf("normal text\n");
+  printf(COLOR_RED COLOR_BG_WHITE COLOR_BOLD "This is bold red text on white -- using libcolor values\n" COLOR_NORMAL);
+  printf("normal text\n");
+  cprintf(RED, WHITE, BOLD, "This is bold red text on white -- using libcolor cprintf()\n");
+  printf("normal text\n");
+  return 0;
+}
+```
+
+and the output :
+
+![alt tag](samples/testcolor1_output.png)
 
 How to build
 ------------
