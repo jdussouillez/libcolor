@@ -23,9 +23,11 @@ static char* getstrbgcolor(color_t bgc) {
   return str;
 }
 
-void cprintf(color_t fontcolor, color_t bgcolor, int bold, const char* format, ...) {
+int cprintf(color_t fontcolor, color_t bgcolor, int bold, const char* format, ...) {
   va_list arglist;
   char *strcolor, *strbgcolor;
+  int nbcharprinted;
+  // Set (= print) colors. If the color is NORMAL, an empty string is printed.
   strcolor = getstrcolor(fontcolor);
   strbgcolor = getstrbgcolor(bgcolor);
   printf("%s%s", strcolor, strbgcolor);
@@ -33,8 +35,11 @@ void cprintf(color_t fontcolor, color_t bgcolor, int bold, const char* format, .
   free(strbgcolor);
   if (bold)
     printf(COLOR_BOLD);
+  // Print string
   va_start(arglist, format);
-  vprintf(format, arglist);
+  nbcharprinted = vprintf(format, arglist);
   va_end(arglist);
-  printf(COLOR_NORMAL); // Reset colors
+  // Reset colors
+  printf(COLOR_NORMAL);
+  return nbcharprinted;
 }
