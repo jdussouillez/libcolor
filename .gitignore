@@ -1,3 +1,4 @@
+# --- GENERATED ---
 # Object files
 *.o
 *.ko
@@ -16,3 +17,8 @@
 *.exe
 *.out
 *.app
+
+# Ignore output directories
+bin
+obj
+samples/testcolor1
