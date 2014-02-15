@@ -51,10 +51,22 @@ typedef enum {
  * @param fontcolor The font color. Use NORMAL to use default color.
  * @param bgcolor The background color. Use NORMAL to use default background color.
  * @param bold An non-zero value to change the text to bold, 0 otherwise.
- * @param format Output format
+ * @param format Output format.
  * @return The number of characters printed (including the colors caracters and excluding the null byte used to end output to strings.
  * See the printf(3) manpage for more information.
  */
 int cprintf(color_t fontcolor, color_t bgcolor, int bold, const char* format, ...);
+
+/*
+ * Write a colord text to the stream.
+ * @param fontcolor The font color. Use NORMAL to use default color.
+ * @param bgcolor The background color. Use NORMAL to use default background color.
+ * @param bold An non-zero value to change the text to bold, 0 otherwise.
+ * @param stream The stream.
+ * @param format Output format.
+ * @return The number of characters printed (including the colors caracters and excluding the null byte used to end output to strings.
+ * See the printf(3) manpage for more information.
+ */
+int cfprintf(FILE* stream, color_t fontcolor, color_t bgcolor, int bold, const char* format, ...);
 
 #endif // COLOR_H

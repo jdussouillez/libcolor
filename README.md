@@ -64,11 +64,13 @@ Available colors :
 
 See the [Wikipedia article about ANSI espace colors code](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) for more information.
 
-libcolor provides the cprintf function which can be used as printf(3), but there are more parameters : 
+libcolor provides the function cfprintf which can be used as fprintf(3), but there are more parameters : 
 - The font color (NORMAL, BLACK... See the enumeration color_t)
 - The background color (NORMAL, BLACK... See the enumeration color_t)
 - Write bold text (BOLD or NOBOLD)
+libcolor provides the function cprintf which is equivalent to cfprintf with stdout as stream.
 ``` C
+int cfprintf(FILE* stream, color_t fontcolor, color_t bgcolor, int bold, const char* format, ...);
 int cprintf(color_t fontcolor, color_t bgcolor, int bold, const char* format, ...);
 ```
 Tools
