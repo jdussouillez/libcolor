@@ -68,7 +68,8 @@ libcolor provides the function cfprintf which can be used as fprintf(3), but the
 - The font color (NORMAL, BLACK... See the enumeration color_t)
 - The background color (NORMAL, BLACK... See the enumeration color_t)
 - Write bold text (BOLD or NOBOLD)
-libcolor provides the function cprintf which is equivalent to cfprintf with stdout as stream.
+
+libcolor provides another function (cprintf) which is equivalent to cfprintf with stdout as stream.
 ``` C
 int cfprintf(FILE* stream, color_t fontcolor, color_t bgcolor, int bold, const char* format, ...);
 int cprintf(color_t fontcolor, color_t bgcolor, int bold, const char* format, ...);
