@@ -9,7 +9,7 @@ Why ?
 Output colored text to the console is quite easy. Before the text, you have to print "special characters" to set the colors and style (font color, background color, bold text).
 
 However, the color characters are not easy to handle, and makes your printf look horrible.
-libcolor supplies all color characters and a printf-like function to output colored text without going crazy.
+libcolor provides all color characters and a printf-like function to output colored text without going crazy.
 
 Have a look at the following example : 
 
@@ -64,6 +64,13 @@ Available colors :
 
 See the [Wikipedia article about ANSI espace colors code](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) for more information.
 
+libcolor provides the cprintf function which can be used as printf(3), but there are more parameters : 
+- The font color (NORMAL, BLACK... See the enumeration color_t)
+- The background color (NORMAL, BLACK... See the enumeration color_t)
+- Write bold text (BOLD or NOBOLD)
+``` C
+int cprintf(color_t fontcolor, color_t bgcolor, int bold, const char* format, ...);
+```
 Tools
 -----
 
