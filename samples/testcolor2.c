@@ -7,7 +7,7 @@ int main(void) {
    * Example #1
    */
   printf("\e[31m\e[47m\e[1mThis is bold red text on white -- no libcolor\e[m\n");
-  cprintf(RED, WHITE, 1, "This is bold red text on white -- using libcolor\n");
+  cprintf(RED, WHITE, BOLD, "This is bold red text on white -- using libcolor\n");
 
   /*
    * Example #2
@@ -16,9 +16,9 @@ int main(void) {
   printf("\e[30m\e[47mBlack on white\e[m | \e[37m\e[40mWhite on black\e[m -- no libcolor\n");
 
   // Using the cprintf function from libsort (need several instructions here because there are different colors on the same line)
-  cprintf(BLACK, WHITE, 0, "Black on white");
+  cprintf(BLACK, WHITE, NOBOLD, "Black on white");
   printf(" | ");
-  cprintf(WHITE, BLACK, 0, "White on black");
+  cprintf(WHITE, BLACK, NOBOLD, "White on black");
   printf(" -- using libcolor (1)\n");
 
   // Or using the libsort defined color's value
