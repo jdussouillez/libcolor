@@ -1,9 +1,13 @@
 #ifndef COLOR_H
 #define COLOR_H
 
+#define NOBOLD 0
+#define BOLD 1
+
 // Reset all colors (foreground, background and bold)
 #define COLOR_NORMAL "\e[m"
 
+// Bold text
 #define COLOR_BOLD "\e[1m"
 
 // Font colors

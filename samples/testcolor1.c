@@ -3,25 +3,13 @@
 #include "color.h"
 
 int main(void) {
-  /*
-   * Example #1
-   */
+  // The last color characters (\e[m or COLOR_NORMAL) is used to reset the colors at the end of the printf.
+  // If you don't reset the colors, the colors will be apply to the following printf ("normal text" printf in this example).
   printf("\e[31m\e[47m\e[1mThis is bold red text on white -- no libcolor\e[m\n");
-  cprintf(RED, WHITE, 1, "This is bold red text on white -- using libcolor\n");
-
-  /*
-   * Example #2
-   */
-  // Using color characters
-  printf("\e[30m\e[47mBlack on white\e[m | \e[37m\e[40mWhite on black\e[m -- no libcolor\n");
-
-  // Using the cprintf function from libsort (need several instructions here because there are different colors on the same line)
-  cprintf(BLACK, WHITE, 0, "Black on white");
-  printf(" | ");
-  cprintf(WHITE, BLACK, 0, "White on black");
-  printf(" -- using libcolor (1)\n");
-
-  // Or using the libsort defined color's value
-  printf(COLOR_BLACK COLOR_BG_WHITE "Black on white" COLOR_NORMAL " | " COLOR_WHITE COLOR_BG_BLACK "White on black" COLOR_NORMAL " -- using libcolor (2)\n");
+  printf("normal text\n");
+  printf(COLOR_RED COLOR_BG_WHITE COLOR_BOLD "This is bold red text on white -- using libcolor values\n" COLOR_NORMAL);
+  printf("normal text\n");
+  cprintf(RED, WHITE, BOLD, "This is bold red text on white -- using libcolor cprintf()\n");
+  printf("normal text\n");
   return 0;
 }
