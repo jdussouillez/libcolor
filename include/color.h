@@ -30,6 +30,10 @@
 #define COLOR_BG_CYAN "\e[46m"
 #define COLOR_BG_WHITE "\e[47m"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
  * Available colors.
  * http://en.wikipedia.org/wiki/ANSI_escape_code#Colors
@@ -68,5 +72,9 @@ int cprintf(color_t fontcolor, color_t bgcolor, int bold, const char* format, ..
  * See the printf(3) manpage for more information.
  */
 int cfprintf(FILE* stream, color_t fontcolor, color_t bgcolor, int bold, const char* format, ...);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif // COLOR_H
