@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -g -Wall -O3
+CFLAGS = -g -fPIC -Wall -Wextra -O3
 SRCDIR = src
 INCDIR = include
 OBJDIR = obj
